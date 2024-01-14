@@ -1,7 +1,9 @@
 const app = require("./src/app");
 const mongoose = require("mongoose");
+require("dotenv").config();
+const config = require("./src/configs/config");
 
-const PORT = 3050;
+const PORT = config.app.port || 3001;
 
 app.listen(PORT, () => {
   console.log(`Listening in port ${PORT}`);
